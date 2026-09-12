@@ -92,7 +92,7 @@ const Footer = () => {
 
               {/* LinkedIn */}
               <a
-                href="#"
+                href="https://www.linkedin.com/in/rupescse/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
