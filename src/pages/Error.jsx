@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const NotFound = () => {
+const Error = () => {
   return (
     <section className="flex min-h-screen items-center justify-center bg-[#111827] px-6 pt-20 text-white">
       {" "}
@@ -26,4 +26,4 @@ const NotFound = () => {
   );
 };
 
-export default NotFound;
+export default Error;

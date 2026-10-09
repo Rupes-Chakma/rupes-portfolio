@@ -8,7 +8,7 @@ import Services from "../pages/Services";
 import Skills from "../pages/Skills";
 import Education from "../pages/Education";
 import Contact from "../pages/Contact";
-import NotFound from "./../pages/notFound";
+import Error from "../pages/Error";
 
 const AppRoutes = () => {
   return (
@@ -20,7 +20,7 @@ const AppRoutes = () => {
       <Route path="/skills" element={<Skills />} />
       <Route path="/education" element={<Education />} />
       <Route path="/contact" element={<Contact />} />
-      <Route path="*" element={<NotFound />} />
+      <Route path="*" element={<Error />} />
     </Routes>
   );
 };
