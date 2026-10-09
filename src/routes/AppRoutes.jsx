@@ -8,7 +8,7 @@ import Services from "../pages/Services";
 import Skills from "../pages/Skills";
 import Education from "../pages/Education";
 import Contact from "../pages/Contact";
-import NotFound from "../pages/notFound";
+import NotFound from "./../pages/notFound";
 
 const AppRoutes = () => {
   return (
