@@ -20,6 +20,8 @@ import {
 
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 
+const cvUrl = `${import.meta.env.BASE_URL}Rupes_Chakma_Frontend_Developer_CV.pdf`;
+
 const Home = () => {
   const roles = [
     "Frontend Developer",
@@ -205,16 +207,17 @@ const Home = () => {
                 <Mail size={18} />
               </Link>
 
+              {/* Fixed Download CV */}
               <a
-                href="/resume.pdf"
-                download
+                href={cvUrl}
+                download="Rupes_Chakma_Frontend_Developer_CV.pdf"
                 className={`inline-flex items-center gap-2 rounded-full
                 border border-gray-700 px-6 py-3.5 font-semibold
                 text-gray-300 transition-all duration-300
                 hover:border-blue-400 hover:text-white ${focusStyle}`}
               >
-                Download CV
                 <Download size={18} />
+                Download CV
               </a>
             </div>
 
@@ -272,7 +275,7 @@ const Home = () => {
                 sm:h-80 sm:w-80 lg:h-[400px] lg:w-[400px]"
               >
                 <img
-                  src="/profile.png"
+                  src={`${import.meta.env.BASE_URL}profile.png`}
                   alt="Rupes Chakma, Frontend Developer"
                   className="h-full w-full object-cover object-top"
                   fetchPriority="high"
@@ -294,7 +297,9 @@ const Home = () => {
 
                 <div>
                   <p className="text-xs text-gray-500">My Focus</p>
-                  <p className="font-bold text-gray-900">React & Web Design</p>
+                  <p className="font-bold text-gray-900">
+                    React &amp; Web Design
+                  </p>
                 </div>
               </div>
 
