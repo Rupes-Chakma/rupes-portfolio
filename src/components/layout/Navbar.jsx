@@ -102,8 +102,8 @@ const Navbar = () => {
 
         {/* Desktop Download CV */}
         <a
-          href="/resume.pdf"
-          download="Rupes_Chakma_CV.pdf"
+          href="/Rupes_Chakma_Frontend_Developer_CV.pdf"
+          download="Rupes_Chakma_Frontend_Developer_CV.pdf"
           className="hidden shrink-0 items-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-blue-500 px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-blue-500/20 transition-all duration-300 hover:-translate-y-0.5 hover:from-blue-500 hover:to-blue-400 hover:shadow-blue-500/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#111827] active:translate-y-0 xl:inline-flex"
         >
           <Download size={17} aria-hidden="true" />
@@ -167,8 +167,8 @@ const Navbar = () => {
 
           {/* Mobile Download CV */}
           <a
-            href="/resume.pdf"
-            download="Rupes_Chakma_CV.pdf"
+            href="/Rupes_Chakma_Frontend_Developer_CV.pdf"
+            download="Rupes_Chakma_Frontend_Developer_CV.pdf"
             tabIndex={isOpen ? 0 : -1}
             className="mt-3 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-blue-500 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-500/20 transition-all duration-200 hover:from-blue-500 hover:to-blue-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 active:scale-[0.98]"
           >
