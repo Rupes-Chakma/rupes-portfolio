@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { Download, Menu, X, ChevronRight } from "lucide-react";
 
+const cvUrl = `${import.meta.env.BASE_URL}Rupes_Chakma_Frontend_Developer_CV.pdf`;
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -17,36 +19,24 @@ const Navbar = () => {
 
   const closeMenu = () => setIsOpen(false);
 
-  // Close mobile menu when Escape is pressed
   useEffect(() => {
     const handleKeyDown = (event) => {
-      if (event.key === "Escape") {
-        closeMenu();
-      }
+      if (event.key === "Escape") closeMenu();
     };
 
     window.addEventListener("keydown", handleKeyDown);
-
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
-  // Close mobile menu when the screen becomes desktop-sized
   useEffect(() => {
     const mediaQuery = window.matchMedia("(min-width: 1024px)");
 
     const handleResize = (event) => {
-      if (event.matches) {
-        closeMenu();
-      }
+      if (event.matches) closeMenu();
     };
 
     mediaQuery.addEventListener("change", handleResize);
-
-    return () => {
-      mediaQuery.removeEventListener("change", handleResize);
-    };
+    return () => mediaQuery.removeEventListener("change", handleResize);
   }, []);
 
   const navLinkClass = ({ isActive }) =>
@@ -60,7 +50,6 @@ const Navbar = () => {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#111827]/90 shadow-lg shadow-black/5 backdrop-blur-xl">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-        {/* Logo */}
         <Link
           to="/"
           onClick={closeMenu}
@@ -68,13 +57,12 @@ const Navbar = () => {
           className="group flex shrink-0 items-center rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
         >
           <img
-            src="/logo.png"
+            src={`${import.meta.env.BASE_URL}logo.png`}
             alt="Rupes.Dev"
             className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105 sm:h-12"
           />
         </Link>
 
-        {/* Desktop Navigation */}
         <nav
           aria-label="Main navigation"
           className="hidden items-center gap-4 lg:flex xl:gap-6"
@@ -100,9 +88,8 @@ const Navbar = () => {
           ))}
         </nav>
 
-        {/* Desktop Download CV */}
         <a
-          href="/Rupes_Chakma_Frontend_Developer_CV.pdf"
+          href={cvUrl}
           download="Rupes_Chakma_Frontend_Developer_CV.pdf"
           className="hidden shrink-0 items-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-blue-500 px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-blue-500/20 transition-all duration-300 hover:-translate-y-0.5 hover:from-blue-500 hover:to-blue-400 hover:shadow-blue-500/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#111827] active:translate-y-0 xl:inline-flex"
         >
@@ -110,7 +97,6 @@ const Navbar = () => {
           <span>Download CV</span>
         </a>
 
-        {/* Mobile Menu Toggle */}
         <button
           type="button"
           onClick={() => setIsOpen((prev) => !prev)}
@@ -127,7 +113,6 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Navigation */}
       <div
         id="mobile-navigation"
         aria-hidden={!isOpen}
@@ -165,9 +150,8 @@ const Navbar = () => {
             </NavLink>
           ))}
 
-          {/* Mobile Download CV */}
           <a
-            href="/Rupes_Chakma_Frontend_Developer_CV.pdf"
+            href={cvUrl}
             download="Rupes_Chakma_Frontend_Developer_CV.pdf"
             tabIndex={isOpen ? 0 : -1}
             className="mt-3 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-blue-500 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-500/20 transition-all duration-200 hover:from-blue-500 hover:to-blue-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 active:scale-[0.98]"
